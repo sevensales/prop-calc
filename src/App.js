@@ -27,12 +27,12 @@ function App() {
   ingredients.forEach(function (element, index) {
     ingredients[index] = element.split(",");
   });
-  const [inputValue, setInputValue] = useState(14.25);
+  const [inputValue, setInputValue] = useState(14.5);
 
   return (
     <div>
       <Container maxW="container.lg">
-        <Heading mb={5}>{recipe}</Heading>
+        <Heading className="capitalize-first" mb={5}>{recipe}</Heading>
         <FormControl mb={5}>
           <Flex alignItems="center" gap={3}>
             <Text as='b'>Peso em Kilogramas:</Text>
@@ -54,8 +54,8 @@ function App() {
             <Thead>
               <Tr>
                 <Th>Ingredientes</Th>
-                <Th isNumeric>Gramas</Th>
-                <Th isNumeric>Kilos</Th>
+                <Th isNumeric>Quantidade</Th>
+                <Th w="4em">Medida</Th>
               </Tr>
             </Thead>
             <Tbody>
@@ -65,11 +65,11 @@ function App() {
                     <Td>{ingredient[0]}</Td>
                     <Td isNumeric>
                       {inputValue
-                        ? (ingredient[1] * (inputValue * 1000)).toFixed(2)
+                        ? (ingredient[1] * (inputValue)).toFixed(2)
                         : 0}
                     </Td>
-                    <Td isNumeric>
-                      {inputValue ? (ingredient[1] * inputValue).toFixed(2) : 0}
+                    <Td textAlign="center">
+                      {ingredient[2] ? ingredient[2] : ""}
                     </Td>
                   </Tr>
                 );

@@ -1,4 +1,4 @@
-.chakra-table__container td:first-child::first-letter,
+.chakra-table__container td::first-letter,
 .capitalize-first::first-letter {
   text-transform: capitalize;
 }

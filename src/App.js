@@ -58,7 +58,7 @@ function App() {
               <Tr>
                 <Th>Ingredientes</Th>
                 <Th isNumeric>Quantidade</Th>
-                <Th w="4em">Medida</Th>
+                <Th w="7em" textAlign="center">Medida</Th>
               </Tr>
             </Thead>
             <Tbody>

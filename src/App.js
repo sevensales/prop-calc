@@ -27,7 +27,7 @@ function App() {
   ingredients.forEach(function (element, index) {
     ingredients[index] = element.split(",");
   });
-  const [inputValue, setInputValue] = useState(10.5);
+  const [inputValue, setInputValue] = useState(14.25);
 
   return (
     <div>
@@ -41,6 +41,7 @@ function App() {
               step={0.2}
               type="text"
               id="inputField"
+              defaultValue={inputValue}
               onChange={(valueString) => setInputValue(valueString)}
               flex={1}
             >
@@ -60,7 +61,7 @@ function App() {
             <Tbody>
               {ingredients.map(function (ingredient, i) {
                 return (
-                  <Tr>
+                  <Tr key={i}>
                     <Td>{ingredient[0]}</Td>
                     <Td isNumeric>
                       {inputValue

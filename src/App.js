@@ -38,7 +38,7 @@ function App() {
         </Heading>
         <FormControl mb={5}>
           <Flex alignItems="center" gap={3}>
-            <Text as="b">Peso em Kilogramas:</Text>
+            <Text as="b">Insira aqui o peso em KG:</Text>
             <NumberInput
               precision={2}
               step={0.2}

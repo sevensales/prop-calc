@@ -24,18 +24,21 @@ function App() {
   let data = params.str.split("|");
   let ingredients = data[0].split(";");
   let recipe = data[1];
+  let qty = data[2] ? data[2] : 14.5;
   ingredients.forEach(function (element, index) {
     ingredients[index] = element.split(",");
   });
-  const [inputValue, setInputValue] = useState(14.5);
+  const [inputValue, setInputValue] = useState(qty);
 
   return (
     <div>
       <Container maxW="container.lg">
-        <Heading className="capitalize-first" mb={5}>{recipe}</Heading>
+        <Heading className="capitalize-first" mb={5}>
+          {recipe}
+        </Heading>
         <FormControl mb={5}>
           <Flex alignItems="center" gap={3}>
-            <Text as='b'>Peso em Kilogramas:</Text>
+            <Text as="b">Peso em Kilogramas:</Text>
             <NumberInput
               precision={2}
               step={0.2}
@@ -64,9 +67,7 @@ function App() {
                   <Tr key={i}>
                     <Td>{ingredient[0]}</Td>
                     <Td isNumeric>
-                      {inputValue
-                        ? (ingredient[1] * (inputValue)).toFixed(2)
-                        : 0}
+                      {inputValue ? (ingredient[1] * inputValue).toFixed(2) : 0}
                     </Td>
                     <Td textAlign="center">
                       {ingredient[2] ? ingredient[2] : ""}

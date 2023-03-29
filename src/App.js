@@ -16,6 +16,7 @@ import {
   Heading,
   Text,
 } from "@chakra-ui/react";
+import "iframe-resizer/js/iframeResizer.contentWindow";
 import "./App.css";
 
 function App() {

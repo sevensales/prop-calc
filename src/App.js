@@ -28,7 +28,7 @@ function App() {
   ingredients.forEach(function (element, index) {
     ingredients[index] = element.split(",");
   });
-  const [inputValue, setInputValue] = useState(qty);
+  const [inputValue, setInputValue] = useState();
 
   return (
     <div>

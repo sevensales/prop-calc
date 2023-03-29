@@ -32,7 +32,7 @@ function App() {
 
   return (
     <div>
-      <Container maxW="container.lg">
+      <Container maxW="container.lg" padding="0">
         <Heading className="capitalize-first" mb={5}>
           {recipe}
         </Heading>

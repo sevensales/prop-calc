@@ -2,3 +2,12 @@
 .capitalize-first::first-letter {
   text-transform: capitalize;
 }
+
+.chakra-table td,
+.chakra-table th {
+  padding: 2px;
+}
+
+.chakra-numberinput__field {
+  padding: 0.5em !important;
+}

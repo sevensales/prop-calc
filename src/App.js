@@ -58,7 +58,9 @@ function App() {
               <Tr>
                 <Th>Ingredientes</Th>
                 <Th isNumeric>Quantidade</Th>
-                <Th w="7em" textAlign="center">Medida</Th>
+                <Th w="7em" textAlign="center">
+                  Medida
+                </Th>
               </Tr>
             </Thead>
             <Tbody>
@@ -67,7 +69,11 @@ function App() {
                   <Tr key={i}>
                     <Td>{ingredient[0]}</Td>
                     <Td isNumeric>
-                      {inputValue ? (ingredient[1] * inputValue).toFixed(2) : 0}
+                      {inputValue
+                        ? ingredient[2].toLowerCase() === "gramas"
+                          ? Math.round(ingredient[1] * inputValue)
+                          : (ingredient[1] * inputValue).toFixed(2)
+                        : 0}
                     </Td>
                     <Td textAlign="center">
                       {ingredient[2] ? ingredient[2] : ""}

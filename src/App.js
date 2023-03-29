@@ -24,7 +24,7 @@ function App() {
   let data = params.str.split("|");
   let ingredients = data[0].split(";");
   let recipe = data[1];
-  let qty = data[2] ? data[2] : 14.5;
+  //let qty = data[2] ? data[2] : 14.5;
   ingredients.forEach(function (element, index) {
     ingredients[index] = element.split(",");
   });
